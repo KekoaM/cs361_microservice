@@ -1,5 +1,5 @@
 [package]
-name = "cs361_mircoservice"
+name = "cs361_microservice"
 version = "0.1.0"
 edition = "2021"
 
