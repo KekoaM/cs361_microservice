@@ -1,7 +1,7 @@
 use actix_web::{get, web, App, HttpServer, Responder};
+use actix_web_lab::web as web_lab;
 use rand::Rng;
-use serde::Deserialize;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize)]
 struct Params {
@@ -44,6 +44,10 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .route("/hello", web::get().to(|| async { "Hello World!" }))
+            .service(web_lab::Redirect::new(
+                "/",
+                "https://github.com/KekoaM/cs361_microservice",
+            ))
             .service(gen)
     })
     .bind(("0.0.0.0", 8080))?
