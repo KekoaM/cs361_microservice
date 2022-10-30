@@ -50,7 +50,7 @@ async fn main() -> std::io::Result<()> {
             ))
             .service(gen)
     })
-    .bind(("0.0.0.0", 8080))?
+    .bind(("0.0.0.0", 80))?
     .run()
     .await
 }
