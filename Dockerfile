@@ -18,7 +18,5 @@ FROM rust:1.64-slim-buster
 
 COPY --from=build /cs361_microservice/target/release/cs361_microservice .
 
-
+EXPOSE 80/tcp
 CMD ["./cs361_microservice"]
-
-# EXPOSE 8080/tcp
