@@ -17,10 +17,37 @@ struct StatTable {
     damage: i32,
 }
 
+// #[derive(Debug)]
+// struct Names {
+//     name: String,
+//     used: bool,
+// }
+
+/// Generates a random name from a list, if the list is exhausted, attempts to pull updates for the
+/// list from a 3rd party source TODO finish description
+fn generate_name() -> String {
+    let mut unused_names: Vec<String> = Vec::new();
+    let mut used_names: Vec<String> = Vec::new();
+
+    unused_names.push("Test Name 0".to_owned());
+    unused_names.push("Test Name 1".to_owned());
+    unused_names.push("Test Name 2".to_owned());
+
+    let mut rng = rand::thread_rng();
+
+    let choice = rng.gen_range(0..unused_names.len());
+
+    unused_names
+        .iter()
+        .nth(choice)
+        .expect("rng range should be exact length of unused names list")
+        .to_string()
+}
+
 /// Generates a semi-random set of stats based on the given difficulty
 fn generate_stats(difficulty: i32) -> StatTable {
     let mut rng = rand::thread_rng();
-    let name = "Test Name".to_string();
+    let name = generate_name();
     let health = rng.gen_range(10..100) * difficulty;
     let damage = (5 * difficulty).max(150 - health) + rng.gen_range(1..5) * difficulty;
 
