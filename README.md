@@ -8,6 +8,15 @@ To use this project, you can either use the hosted version at [cs361.moritamcvey
 
 To get a stat block, send a GET request to `/req` with a `difficulty` integer value.
 The server will return a `JSON` object with the calculated stats.
+The `JSON` response will consist of five elements:
+
+```json
+"difficulty": 1 // The difficulty value that was given in the request
+"name": "Alex Lee" // A random name
+"health": 123 // A random health value (i32)
+"damage": 21 // A random damage value (i32)
+"stamina": 12 // A random stamina value (i32)
+```
 
 ### Example
 
@@ -20,7 +29,13 @@ curl "https://cs361.moritamcvey.net/gen?difficulty=1"
 returns:
 
 ```json
-{ "difficulty": 1, "name": "Test Name", "health": 16, "damage": 138 }
+{
+  "difficulty": 1,
+  "name": "Alex Lee",
+  "health": 123,
+  "damage": 21,
+  "stamina": 12
+}
 ```
 
 ## Installation
