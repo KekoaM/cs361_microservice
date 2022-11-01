@@ -38,6 +38,14 @@ returns:
 }
 ```
 
+### Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    Client->>Server: GET /gen
+    Server->>Client: return stat table
+```
+
 ## Installation
 
 ### Docker
