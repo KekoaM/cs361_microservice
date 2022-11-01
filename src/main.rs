@@ -15,13 +15,8 @@ struct StatTable {
     name: String,
     health: i32,
     damage: i32,
+    stamina: i32,
 }
-
-// #[derive(Debug)]
-// struct Names {
-//     name: String,
-//     used: bool,
-// }
 
 /// Generates a random name from a list, if the list is exhausted, attempts to pull updates for the
 /// list from a 3rd party source TODO finish description
@@ -50,12 +45,14 @@ fn generate_stats(difficulty: i32) -> StatTable {
     let name = generate_name();
     let health = rng.gen_range(10..100) * difficulty;
     let damage = (5 * difficulty).max(150 - health) + rng.gen_range(1..5) * difficulty;
+    let stamina = difficulty + rng.gen_range(1..8 * difficulty);
 
     let table: StatTable = StatTable {
         difficulty,
         name,
         health,
         damage,
+        stamina,
     };
 
     table
