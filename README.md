@@ -1,5 +1,9 @@
 # CS361 Microservice
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/KekoaM/cs361_microservice/Docker)
+![Server Uptime](https://uptime.moritamcvey.net/api/badge/3/uptime)
+
+
 A simple stat block generator REST microservice for CS361.
 
 ## Usage
