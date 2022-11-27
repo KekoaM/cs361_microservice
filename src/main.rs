@@ -60,9 +60,9 @@ fn generate_name() -> String {
 fn generate_stats(difficulty: i32) -> StatTable {
     let mut rng = rand::thread_rng();
     let name = generate_name();
-    let health = rng.gen_range(10..100) * difficulty;
-    let damage = (5 * difficulty).max(150 - health) + rng.gen_range(1..5) * difficulty;
-    let stamina = difficulty + rng.gen_range(1..8 * difficulty);
+    let health = rng.gen_range(100..200 * difficulty) * difficulty;
+    let damage = rng.gen_range(100..200) * difficulty;
+    let stamina = rng.gen_range(100 * difficulty..150 * difficulty * difficulty);
 
     let table: StatTable = StatTable {
         difficulty,
