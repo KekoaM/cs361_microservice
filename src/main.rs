@@ -21,12 +21,29 @@ struct StatTable {
 /// Generates a random name from a list, if the list is exhausted, attempts to pull updates for the
 /// list from a 3rd party source TODO finish description
 fn generate_name() -> String {
-    let mut unused_names: Vec<String> = Vec::new();
-    let mut used_names: Vec<String> = Vec::new();
+    // let mut unused_names: Vec<String> = Vec::new();
+    let unused_names = [
+        "Peasant Persivell",
+        "Peasant Heriot",
+        "Admiral Maukolum",
+        "Grand Duchess Rechemay",
+        "Landgrave Huon",
+        "Bishop Conon",
+        "Admiral Beavis",
+        "Cardinal Triston",
+        "Emperor Rich",
+        "Archbishop Miles",
+        "Princess Gaillart",
+        "Baronetess Ingramus",
+        "Count Rozeman",
+        "Chancellor Karolus",
+        "Viscount Arnald",
+    ];
+    // let mut used_names: Vec<String> = Vec::new();
 
-    unused_names.push("Test Name 0".to_owned());
-    unused_names.push("Test Name 1".to_owned());
-    unused_names.push("Test Name 2".to_owned());
+    // unused_names.push("Test Name 0".to_owned());
+    // unused_names.push("Test Name 1".to_owned());
+    // unused_names.push("Test Name 2".to_owned());
 
     let mut rng = rand::thread_rng();
 
